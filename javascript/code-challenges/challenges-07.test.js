@@ -57,7 +57,12 @@ For example, if the input is 'Welcome', the output will be:
 ['Welcome', 'elcome', 'lcome', 'come', 'ome', 'me', 'e', ''].
 ------------------------------------------------------------------------------------------------ */
 
-const howMuchPencil = (str) => str.forEach(str.slice());
+const howMuchPencil = (str) => {
+  let result = [];
+  for (let i=0; i < str.length + 1; i++){
+    result.push(str.slice(i));
+  }
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -113,10 +118,12 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  for (let i = 0; i < recipe.length; i++){
-    recipe.ingredients.split(' ');
-    return recipe.ingredients[2];
-  }
+  recipe.ingredients.forEach(ingredient => {
+    let withoutNumber = ingredient.slice(ingredient.indexOf(' ')+ 1);
+    let withoutMeasurement = withoutNumber.slice(withoutNumber.indexOf(' ')+1);
+    result.push(withoutMeasurement);
+  });
+
   return result;
 };
 
