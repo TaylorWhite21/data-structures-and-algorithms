@@ -97,13 +97,10 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  // str.from(str => [Symbol.matchAll](str));
 
-  
-  // let arrayOfStrings = [];
-  // let splitStrings = str.split(' ');
-  // arrayOfStrings.push(splitStrings);
-  // arrayOfStrings.match(/^[A-Z]/);
+  let regex = /[A-Z][a-zA-Z]*/g;
+  let results = str.match(regex);
+  return results || [];
 };
 
 
@@ -113,7 +110,17 @@ CHALLENGE 6
 Write a function named citiesAtoJ that takes in an array of city names and uses a regular expression pattern to return a new array containing any cities that begin with the letters A through J, inclusive.
 ------------------------------------------------------------------------------------------------ */
 
-const citiesAtoJ = (arr) => arr.match(/^[A-J]/);
+const citiesAtoJ = (arr) => {
+  let regex = /^[A-J]/;
+  let results = [];
+
+  arr.forEach(city => {
+    if (regex.test(city)) {
+      results.push(city);
+    }
+  })
+  return results;
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
