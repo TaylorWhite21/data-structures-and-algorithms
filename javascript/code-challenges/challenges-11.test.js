@@ -5,13 +5,13 @@ CHALLENGE 1 - Review
 
 Write a function named transformToLis that, given an object, returns an array of the key value pairs as html list items.
 
-For example: 
+For example:
 {
   name: 'bob',
   age: 32
 }
 
-Becomes: 
+Becomes:
 [
 <li>name: bob</li>,
 <li>age: 32</li>
@@ -19,7 +19,7 @@ Becomes:
 ------------------------------------------------------------------------------------------------ */
 
 function transformToLis(obj){
-  
+
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -61,11 +61,14 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
 const divisibleByFiveTwoToThePower = (input) => {
-  // Solution code here...
+  let result = input.map((row) => {
+    return row.filter((cell) => typeof cell === 'number' && cell % 5 === 0).map(filterCell => Math.pow(2, filterCell));
+  });
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 5 
+CHALLENGE 5
 
 Write a function named findMaleAndFemale that, given the Star Wars data, below,
 returns the names of the characters whose gender is either male or female.
@@ -126,9 +129,8 @@ let starWarsData = [{
   gender: 'female'
 }];
 
-let findMaleAndFemale = (data) => {
-  // Solution code here...
-};
+let findMaleAndFemale = (data) => data.filter(char => char.gender === 'male' || char.gender === 'female').map(char => char.name).join(' and ');
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 
@@ -137,7 +139,7 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
-  // Solution code here...
+  return data.reduce((shortestSoFar, nextCharacter) => Number(shortestSoFar.height) < Number(nextCharacter.height) ? shortestSoFar : nextCharacter).name;
 };
 
 /* ------------------------------------------------------------------------------------------------
