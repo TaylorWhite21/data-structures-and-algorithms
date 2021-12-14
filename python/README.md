@@ -2,6 +2,13 @@
 
 ## Language: `Python`
 
+## Links to code challenges
+Code Challenge 1: [Array Reverse](array_reverse/README.md)  
+Code Challenge 2: [Array Insert Shift](array_insert_shift/README.md)
+Code Challenge 3: [Array Binary Search](array_binary_search/README.md)
+
+
+
 ### Folder and Challenge Setup
 
 Each type of code challenge has slightly different instructions. Please refer to the notes and examples below for instructions for each DS&A assignment type.
@@ -74,3 +81,5 @@ From the root of the `data-structures-and-algorithms/python` folder, execute the
 - **Run every possible test** - `pytest`
 - **Run filtered tests** - `pytest -k some_filter_text`
 - **Run in watch mode** - `ptw` or `pytest-watch`
+
+
