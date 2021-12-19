@@ -6,6 +6,9 @@
 Code Challenge 1: [Array Reverse](array_reverse/README.md)  
 Code Challenge 2: [Array Insert Shift](array_insert_shift/README.md)
 Code Challenge 3: [Array Binary Search](array_binary_search/README.md)
+Code Challenge 4: Mock Interviews - No links
+Code Challenge 5: [Linked List](linked_list/README.md)
+
 
 
 
