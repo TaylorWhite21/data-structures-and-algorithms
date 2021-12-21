@@ -9,9 +9,6 @@ Code Challenge 3: [Array Binary Search](array_binary_search/README.md)
 Code Challenge 4: Mock Interviews - No links
 Code Challenge 5: [Linked List](linked_list/README.md)
 
-
-
-
 ### Folder and Challenge Setup
 
 Each type of code challenge has slightly different instructions. Please refer to the notes and examples below for instructions for each DS&A assignment type.
