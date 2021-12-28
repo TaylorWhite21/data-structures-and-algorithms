@@ -8,9 +8,7 @@ Code Challenge 2: [Array Insert Shift](array_insert_shift/README.md)
 Code Challenge 3: [Array Binary Search](array_binary_search/README.md)
 Code Challenge 4: Mock Interviews - No links
 Code Challenge 5: [Linked List](linked_list/README.md)
-
-
-
+Code Challenge 7: [Linked List kth](kth_from_end/README.md)
 
 ### Folder and Challenge Setup
 
