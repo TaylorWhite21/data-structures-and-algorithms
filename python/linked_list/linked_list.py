@@ -62,6 +62,7 @@ class LinkedList:
             stringified += '{} -> '.format(current.value)
             current = current.next
         return stringified + 'NULL'
+    
 
 class Node:
 # Default next to none so that you dont have to worry about ending the list
