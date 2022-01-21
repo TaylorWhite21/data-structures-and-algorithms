@@ -8,7 +8,7 @@ import pytest
 #     node = Node('Erin')
 #     assert node.value == 'Erin'
 
-# # Can successfully instantiate an empty stack
+# Can successfully instantiate an empty stack
 # def test_stack_creation():
 #     stack = Stack()
 #     assert stack.top == None
