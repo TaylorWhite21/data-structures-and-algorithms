@@ -1,91 +1,57 @@
 # Stacks and Queues
-Using a Linked List as the underlying data storage mechanism, implement both a Stack and a Queue
+Create a function to validate brackets and return a boolean on whether or not the brackets in the string are balanced
 
 ## Challenge
-Create a class called AnimalShelter which holds only dogs and cats.
-The shelter operates using a first-in, first-out approach.
-Implement the following methods:
-  enqueue
-    Arguments: animal
-      animal can be either a dog or a cat object.
-  dequeue
-    Arguments: pref
-      pref can be either "dog" or "cat"
-    Return: either a dog or a cat, based on preference.
-      If pref is not "dog" or "cat" then return null.
+Create a function to validate brackets and return a boolean on whether or not the brackets in the string are balanced
+
+Write a function called validate brackets
+Arguments: string
+Return: boolean
+  representing whether or not the brackets in the string are balanced
+
+There are 3 types of brackets:
+
+Round Brackets : ()
+Square Brackets : []
+Curly Brackets : {}
 
 ## Whiteboard
-![shelter](shelter.png)
+![Brackets](brackets.png)
 
 ## Approach & Efficiency
-I took a TDD approach and designed my tests before I wrote my code. It made it 1000% easier.
+I took a TDD approach and designed my tests before I wrote my code. I realized well into my original plan that I was not able to check if the input was a letter or bracket, So I had to research and change my approach to a list of pre-determined values to check for.
 
-enqueue:
 Big(O):
-Space: O(n)
-Time: O(1)
-
-dequeue:
-Big(o):
 Space: O(n)
 Time: O(n)
 
 ## API
-Stack:
-Pop
-Push
-
-Queue:
-Enqueue
-Dequeue
 
 Solution:
 ```
-  def enqueue(self, animal):
-    node = Node(animal)
-    if self.rear is None:
-      self.front = node
-      self.rear = node
-    else:
-      self.rear.next = node
-      self.rear = self.rear.next
-
-  def dequeue(self, pref):
-    if self.front is None:
-      raise CustomError('Queue is empty')
-    elif pref == 'cat':
-      if self.front.value == 'cat':
-        temp = self.front
-        self.front = temp.next
-        temp.next = None
-        return temp.value 
-      else:
-        while self.front.value is not 'cat':
-          temp = self.front
-          self.front = temp.next
-          self.temp_stack.push(temp.value)
-          if self.front.value == 'cat':
-            found_cat = self.front.value
-            while self.temp_stack is not None:
-              self.enqueue(self.temp_stack.pop())
-              return found_cat
-    elif pref == 'dog':
-      print(f'pref: {pref}')
-      if self.front.value == 'dog':
-        temp = self.front
-        self.front = temp.next
-        temp.next = None
-        return temp.value 
-      else:
-        while self.front.value is not 'dog':
-          temp = self.front
-          self.front = temp.next
-          self.temp_stack.push(temp.value)
-          if self.front.value == 'dog':
-            found_dog = self.front.value
-            while self.temp_stack is not None:
-              self.enqueue(self.temp_stack.pop())
-              return found_dog
-    else:
-      return None
+  def validate_brackets(string):
+  open_brackets = ['(', '{', '[', '<']
+  closed_brackets = [')', '}', ']', '>']
+  validated = True
+  temp_stack = Stack()
+  if string[0] == ')' or string[0] == ']' or string[0] == '}' or string[0] == '>':
+    validated = False
+    return validated
+  else:
+    for i in string:
+      if i in open_brackets:
+        temp_stack.push(i)
+      elif i in closed_brackets:
+        closed = closed_brackets.index(i)
+        if open_brackets[closed] == temp_stack.top.value:
+          temp_stack.pop()
+        else:
+          validated = False
+          return validated 
+    if temp_stack.isEmpty() == True and validated == True:
+      print('I should not do this yet')
+      return validated
 ```
+## References:
+https://pythonexamples.org/python-if-or/
+https://www.geeksforgeeks.org/check-for-balanced-parentheses-in-python/
