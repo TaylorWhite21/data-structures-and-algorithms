@@ -94,10 +94,10 @@ class BinaryTree:
             return True
           elif value < root.value: 
               print(f'root value in less than: {self.root.value}')
-              walk(root.left, value)
+              return walk(root.left, value)
           elif value > root.value:
               print(f'root value in greater than: {self.root.value}')
-              walk(root.right, value)
+              return walk(root.right, value)
           else:
             return False
-        walk(self.root, value)
+        return walk(self.root, value)
