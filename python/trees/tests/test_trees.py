@@ -174,3 +174,13 @@ def test_bt_find_max():
     bt = BinaryTree(node1)
     
     assert bt.find_max() == 34
+    
+def test_bt_find_max_false():
+    node1 = Node(21)
+    node2 = Node(34)
+    node3 = Node(17)
+    node1.left = node3
+    node1.right = node2
+    bt = BinaryTree(node1)
+    
+    assert bt.find_max() != 17
