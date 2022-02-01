@@ -160,6 +160,11 @@ def test_bst_contains_root():
     
     assert bst.contains(21) == True
 
+def test_find_max_single_node():
+    node1 = Node(21)
+    bt = BinaryTree(node1)
+    assert bt.find_max() == 21
+    
 def test_bt_find_max():
     node1 = Node(21)
     node2 = Node(34)
