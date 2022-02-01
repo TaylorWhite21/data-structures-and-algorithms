@@ -18,4 +18,3 @@ find_max - Returns highest value in binary tree
 
 ## White Board
 ![Tree-max](tree-max.png)
-

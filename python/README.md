@@ -12,7 +12,7 @@ Code Challenge 7: [Linked List kth](kth_from_end/README.md)
 Code Challenge 10: [Stacks and Queues](stacks-and-queues/README.md)  
 Code Challenge 13: [Brackets](stacks-and-queues/README.md)  
 Code Challenge 15: [Binary Tree and BST Implementation](trees/README.md)  
-
+Code Challenge 16: [Binary Tree find max](trees/README.md)  
 
 
 
