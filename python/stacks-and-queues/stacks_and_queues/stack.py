@@ -13,7 +13,6 @@ class Stack:
     node.next = self.top
     self.top = node
 
-    
   def pop(self):
       try:
         temp = self.top
