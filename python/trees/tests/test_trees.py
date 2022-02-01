@@ -130,7 +130,7 @@ def test_add_node_right_bst():
     assert bst.root.right.value == 25
     
 # Returns true	false for the contains method, given an existing or non-existing node value
-def test_bst_contains_value():
+def test_bst_contains_value_right():
     node1 = Node(21)
     node2 = Node(34)
     node3 = Node(17)
@@ -139,3 +139,33 @@ def test_bst_contains_value():
     bst = BinaryTree.BinarySearchTree(node1)
     
     assert bst.contains(34) == True
+    
+def test_bst_contains_value_left():
+    node1 = Node(21)
+    node2 = Node(34)
+    node3 = Node(17)
+    node1.left = node3
+    node1.right = node2
+    bst = BinaryTree.BinarySearchTree(node1)
+    
+    assert bst.contains(17) == True
+
+def test_bst_contains_root():
+    node1 = Node(21)
+    node2 = Node(34)
+    node3 = Node(17)
+    node1.left = node3
+    node1.right = node2
+    bst = BinaryTree.BinarySearchTree(node1)
+    
+    assert bst.contains(21) == True
+
+def test_bt_find_max():
+    node1 = Node(21)
+    node2 = Node(34)
+    node3 = Node(17)
+    node1.left = node3
+    node1.right = node2
+    bt = BinaryTree(node1)
+    
+    assert bt.find_max() == 34
