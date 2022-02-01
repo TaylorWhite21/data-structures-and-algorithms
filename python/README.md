@@ -4,11 +4,17 @@
 
 ## Links to code challenges
 Code Challenge 1: [Array Reverse](array_reverse/README.md)  
-Code Challenge 2: [Array Insert Shift](array_insert_shift/README.md)
-Code Challenge 3: [Array Binary Search](array_binary_search/README.md)
-Code Challenge 4: Mock Interviews - No links
-Code Challenge 5: [Linked List](linked_list/README.md)
-Code Challenge 7: [Linked List kth](kth_from_end/README.md)
+Code Challenge 2: [Array Insert Shift](array_insert_shift/README.md)  
+Code Challenge 3: [Array Binary Search](array_binary_search/README.md)  
+Code Challenge 4: Mock Interviews - No links  
+Code Challenge 5: [Linked List](linked_list/README.md)  
+Code Challenge 7: [Linked List kth](kth_from_end/README.md)  
+Code Challenge 10: [Stacks and Queues](stacks-and-queues/README.md)  
+Code Challenge 13: [Brackets](stacks-and-queues/README.md)  
+Code Challenge 15: [Binary Tree and BST Implementation](trees/README.md)  
+Code Challenge 16: [Binary Tree find max](trees/README.md)  
+
+
 
 ### Folder and Challenge Setup
 
