@@ -48,28 +48,34 @@ class BinaryTree:
     walk(self.root)
     return post_order_list
   
+  # Worked with Alex Payne who helped me find this solution
   def find_max(self):
-    if not self.root :
-      raise Exception("The tree is empty")
-    max_value = self.root.value
-    print(f'max value: {max_value}')
-    def walk(root, current_max):
-      # print(f'root in walk: {root.value}')
-      if not root:
-        # print(f'root is none: {root.value}')
-        print(f'current max: {current_max}')
-        return current_max
-      if root.value > current_max:
-        print(f'root value: {root.value}')
-        current_max = root.value
-        print(f'current max in if statement: {current_max}')
-      current_max = walk(root.left, current_max)
-      print(f'current max for left: {current_max}')
-      current_max = walk(root.right, current_max)
-      print(f'current max for right: {current_max}')
-    max_value = walk(self.root, max_value)
-    print(f'max value: {max_value}')
-    return max_value
+    # going to use the post order left > right > root to find the max value
+    if self.root == None:
+        raise Exception("This tree is empty")
+    current_max = {'max_value': 0}
+    def walk(node, current_max):
+        if node:
+            walk(node.left, current_max)
+            walk(node.right, current_max)
+            if node.value > current_max["max_value"]:
+                current_max['max_value'] = node.value
+    walk(self.root, current_max)
+    return current_max['max_value']
+  
+  # def find_max(self):
+  #   if not self.root :
+  #     raise Exception("The tree is empty")
+  #   max_value = self.root.value
+  #   def walk(root, current_max):
+  #     if not root:
+  #       return current_max
+  #     if root.value > current_max:
+  #       current_max = root.value
+  #     current_max = walk(root.left, current_max)
+  #     current_max = walk(root.right, current_max)
+  #   max_value = walk(self.root, max_value)
+  #   return max_value
   
   # Worked with Roger and he provided solution code
   # def find_max(self):
