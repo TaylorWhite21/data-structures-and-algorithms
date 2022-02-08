@@ -1,17 +1,16 @@
 ## Challenge
-Create a function called breadth first that takes in a Tree and
+Write a function called fizz buzz tree that takes in an argument of k-ary tree. This should then return a new k-ary tree. 
 
 ## Approach & Efficiency
 I took a TDD approach with this because that would be the optimal way when writing code.
 Big O:
-    Space:O(1)
-    Time:O(n)
+    Space:O(n)
+    Time:O(w)
 
 ## API
-breadth_first - Returns each value in a tree in the order it is encountered
 
 ## White Board
-![breadth](breadth.png)
+![tree-fizz-buzz](fizz-buzz.png)
 
 <!-- class KaryTree:
     def __init__(self, root=None):
