@@ -1,28 +1,32 @@
+from graph.queue import Queue
+
+
 class Graph:
   
     def __init__(self):
         self.adjacency_list = {}
-        self.dict_key = 1
         # key will be the node, value adj node with a value of the edge
+    
+    def __str__(self):
+      return self.adjacency_list
+
+    def __repr__(self):
+        return self.adjacency_list
 
     # Adds a node to the graph
     def add_node(self, value):
-        v = Vertex(value)
-        self.adjacency_list[self.dict_key] = list()
-        self.adjacency_list[self.dict_key].append(v.value)
-        self.dict_key += 1
-        # print(f'dict_key: {self.dict_key}')
-        # print(f'in add node: {self.adjacency_list}')
-        # print(v.value)
-        return self.adjacency_list[self.dict_key - 1][0]
+        vertex = Vertex(value)
+        self.adjacency_list[vertex] = []
+        return vertex
             # Arguments: value
             # Returns: The added node
             # Add a node to the graph or add to adj list
 
-    # def add_edge(self, node1, node2, weight=None):
-    #   print(self.adjacency_list)
-    #   edge1 = Edge(node2, weight)
-    #   self.adjacency_list[node1].append(edge1)
+    def add_edge(self, node1, node2, weight=None):
+      if node1 and node2 not in self.adjacency_list:
+        raise Exception
+      edge1 = Edge(node2, weight)
+      self.adjacency_list[node1].append(edge1)
       
             # Arguments: 2 nodes to be connected by the edge, weight (optional)
             # Returns: nothing
@@ -52,23 +56,43 @@ class Graph:
           nodes_in_graph.append(self.adjacency_list[i])
       else:
         return None
-      print(nodes_in_graph)
+      # print(nodes_in_graph)
       return len(nodes_in_graph)
             # Arguments: none
             # Returns the total number of nodes in the graph
-
+      
+    def breadth_first(self, vertex):
+      nodes = []
+      breadth = Queue()
+      visited = set()
+      
+      breadth.enqueue(vertex)
+      visited.add(vertex)
+      
+      while(breadth.isEmpty() == False):
+        front = breadth.dequeue()
+        nodes.append(front)
+        
+        for child in self.adjacency_list:
+          if child not in visited:
+            visited.add(child)
+            breadth.enqueue(child)
+      return nodes
 
 class Vertex:
     def __init__(self, value):
         self.value = value
-    def __repr__(self, vertex):
-      self.vertex = vertex
-      return self.vertex
+    
+    def __str__(self):
+        return self.value
+      
+    def __repr__(self):
+      return self.value
 
 class Edge:
     def __init__(self,vertex, weight=None):
         self.vertex = vertex
         self.weight = weight
-    def __repr__(self, vertex):
-      self.vertex = vertex
+        
+    def __repr__(self):
       return self.vertex

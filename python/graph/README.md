@@ -16,3 +16,4 @@ add_edge
 get_nodes
 get_neighbors
 size
+breadth_first
