@@ -1,8 +1,7 @@
-from stacks_and_queues.node import Node
+from graph.node import Node
 
 class CustomStackError(Exception):
   pass
-
 
 class Stack:
   def __init__(self, top=None):
